@@ -10,8 +10,6 @@ import 'services/storage_service.dart';
 import 'providers/theme_provider.dart';
 import 'providers/user_provider.dart';
 import 'providers/progress_provider.dart';
-import 'providers/subject_provider.dart';
-import 'providers/quiz_provider.dart';
 import 'providers/leaderboard_provider.dart';
 import 'providers/daily_challenge_provider.dart';
 import 'providers/streak_provider.dart';
@@ -23,8 +21,6 @@ import 'theme/app_theme.dart';
 import 'screens/splash_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/subjects_screen.dart';
-import 'screens/subject_detail_screen.dart';
 import 'screens/unit_detail_screen.dart';
 import 'screens/lesson_screen.dart';
 import 'screens/quiz_results_screen.dart';
@@ -96,8 +92,6 @@ class KanadilApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => ProgressProvider()),
-        ChangeNotifierProvider(create: (_) => SubjectProvider()),
-        ChangeNotifierProvider(create: (_) => QuizProvider()),
         ChangeNotifierProvider(create: (_) => LeaderboardProvider()),
         ChangeNotifierProvider(create: (_) => DailyChallengeProvider()),
         ChangeNotifierProvider(create: (_) => StreakProvider()),
@@ -164,7 +158,6 @@ class KanadilApp extends StatelessWidget {
       AppRoutes.splash: (_) => const SplashScreen(),
       AppRoutes.onboarding: (_) => const OnboardingScreen(),
       AppRoutes.home: (_) => const HomeScreen(),
-      AppRoutes.subjects: (_) => const SubjectsScreen(),
       AppRoutes.leaderboard: (_) => const LeaderboardScreen(),
       AppRoutes.dailyChallenge: (_) => const DailyChallengeScreen(),
       AppRoutes.profile: (_) => const ProfileScreen(),
@@ -178,11 +171,6 @@ class KanadilApp extends StatelessWidget {
     switch (settings.name) {
       case AppRoutes.subjectDetail:
         final args = settings.arguments as Map<String, dynamic>?;
-        return MaterialPageRoute(
-          builder: (_) => SubjectDetailScreen(
-            subjectId: args?['subjectId'] ?? '',
-          ),
-        );
 
       case AppRoutes.unitDetail:
         final args = settings.arguments as Map<String, dynamic>?;
