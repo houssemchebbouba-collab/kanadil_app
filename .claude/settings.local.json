@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter --version:*)",
+      "Bash(flutter --help:*)",
+      "Bash(dir:*)",
+      "Bash(cmd /c \"dir C:\\\\flutter\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\flutter'' | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\flutter\\\\bin'' | Select-Object Name\")",
+      "Bash(powershell -Command:*)",
+      "Bash(flutter pub get:*)",
+      "Bash(flutter analyze:*)",
+      "Bash(flutter clean:*)",
+      "Bash(flutter run:*)",
+      "Bash(flutter create:*)",
+      "Bash(flutter pub add:*)",
+      "Bash(timeout:*)",
+      "Bash(more:*)",
+      "Bash(echo:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)"
+    ]
+  }
+}
